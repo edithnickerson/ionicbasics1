@@ -286,3 +286,13 @@ We'll use the show and hide components of the `$ionicLoading` service to help ma
 See how this is handled in the controller:
 
 ![Wilken Listing 4.13](http://i39.photobucket.com/albums/e188/ahuimanu/Listing4-13_zpsggsyv9rh.png "Wilken Listing 4.13")
+
+## Chapter 4: Step 6
+
+`git checkout -f step6`
+
+## Infinite Scrolling
+
+Next, Wilken shows us how to use the concept of UI "cards," used like a list, to help to create a common UI technique called infinite scrolling.
+
+![Wilken Figure 4.9](http://i39.photobucket.com/albums/e188/ahuimanu/Figure4-9_zpsxamwsaw3.png "Wilken Figure 4.9")
