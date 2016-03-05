@@ -6,7 +6,7 @@ The book has you downloading parts of his code from Github using the `git clone`
 
 You are fairly familiar with git by now.
 
-## The Resort App
+## Chapter 4: The Resort App
 
 Wilken's chapter 4 example app is for a ficticious resort. Some things it does are:
 
@@ -14,7 +14,7 @@ Wilken's chapter 4 example app is for a ficticious resort. Some things it does a
 * Displaying icons, lists, and cards
 * Using external data
 
-### Step 2
+### Chapter 4: Step 2
 
 Basic ionic components include:
 
