@@ -44,5 +44,11 @@ This is the code that does so in the `www/js/app.js` source file.
 
 ![Wilken Listing 4.2](http://i39.photobucket.com/albums/e188/ahuimanu/Listing4-2_zpsx8bvgfs6.png "Wilken Listing 4.2")
 
+#### Listing 4.3 Adding a template of the Home Views as States
 
+The template for the home view.
+
+```html
+<ion-view view-title="Aloha Resort" hide-back-button="true"></ion-view>
+```
 
