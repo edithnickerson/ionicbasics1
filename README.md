@@ -187,3 +187,11 @@ Wilken utilizes a web service API to grab weather for the ficticious Hawaii Reso
 previously, the Wilken book uses [Open Weather Map Api](http://openweathermap.org/api "Open Weather Map API").
 
 The process for obtaining an API key at Open Weather Map is similar to the process for Weather Underground.
+
+Some features at this stage:
+
+* using a web service within your app
+* translating some of the web service values to be more readable
+* showing a loading screen to the user while fetching an exernal resource (`$ionicLoading`)
+
+![Wilken Figure 4.7](http://i39.photobucket.com/albums/e188/ahuimanu/Figure4-7_zpsi4qmmmnl.png "Wilken Figure 4.7")
