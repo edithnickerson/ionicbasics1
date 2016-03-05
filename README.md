@@ -195,3 +195,21 @@ Some features at this stage:
 * showing a loading screen to the user while fetching an exernal resource (`$ionicLoading`)
 
 ![Wilken Figure 4.7](http://i39.photobucket.com/albums/e188/ahuimanu/Figure4-7_zpsi4qmmmnl.png "Wilken Figure 4.7")
+
+Here's what a weather view would look like to show the weather from the Open Weather Map service:
+
+```html
+<ion-view view-title="Current Weather">
+  <ion-content>
+    <div class="list">
+      <div class="item">Current Conditions: {{weather.weather[0].main}}</div>
+      <div class="item">Current Temperature: {{weather.main.temp}}&deg;</div>
+      <div class="item">Humidity: {{weather.main.humidity}}%</div>
+      <div class="item">Today's High: {{weather.main.temp_max}}&deg;</div>
+      <div class="item">Today's Low: {{weather.main.temp_min}}&deg;</div>
+      <div class="item">Wind: {{weather.wind.speed}}mph, {{getDirection(weather.wind.deg)}}</div>
+    </div>
+  </ion-content>
+</ion-view>
+
+```
