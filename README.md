@@ -120,6 +120,8 @@ object directly.
 
 ![Wilken Listing 4.7](http://i39.photobucket.com/albums/e188/ahuimanu/Listing4-7_zpsu6rj3gg5.png "Wilken Listing 4.7")
 
+This file has been called reservation.js and is actually placed along with its view.  This is the author's preference.
+
 #### Reservation View Template
 
 Notice some of the new Ionic directives used in this template.
@@ -160,6 +162,13 @@ Here is what the code would look like by now:
   $urlRouterProvider.otherwise('/home');
 
 })
+```
+
+Also, since the reservation controller was declared in a separate file, we'll need to included
+a reference to it in our index.html file:
+
+```html
+<script src="views/reservation/reservation.js"></script>
 ```
 
 asdf
