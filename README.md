@@ -35,3 +35,12 @@ A state is the current representation of an app (from ui-router):
 * Controller associated with the view
 * template attached to the view (states are typically linked to a view)
 * ui-router: [https://github.com/angular-ui/ui-router/wiki](https://github.com/angular-ui/ui-router/wiki "ui-router")
+
+#### Listing 4.2 Declaring App States
+
+Ionic uses ui-router to handle routing. Routing is the ability to associate either a view or data by [manipulating the path portion of a URL](https://doepud.co.uk/blog/anatomy-of-a-url "Anatomy of a URL").
+
+![Wilken Listing 4.2](http://i39.photobucket.com/albums/e188/ahuimanu/Listing4-2_zpsx8bvgfs6.png "Wilken Listing 4.2")
+
+
+
