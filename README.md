@@ -226,9 +226,10 @@ He's set this up to statically call only one location:
 What is nice is that Wilken is also demonstrating a nice Platform-as-a-Service option you'd have for hosting your own services: 
 [Heroku](https://www.heroku.com/ "Heroku Cloud Application Hosting").
 
+#### Using the $http service
 
+We've used the AngularJS [$http](https://docs.angularjs.org/api/ng/service/$http "$http service") service previously.
 
+However, the Wilken code differs from ours in that Wilken uses $http directly:
 
-
-
-
+![Wilken Listing 4.11](http://i39.photobucket.com/albums/e188/ahuimanu/Listing4-11_zps2saikqkw.png "Wilken Listing 4.11")
