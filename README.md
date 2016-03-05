@@ -125,3 +125,41 @@ object directly.
 Notice some of the new Ionic directives used in this template.
 
 ![Wilken Listing 4.8](http://i39.photobucket.com/albums/e188/ahuimanu/Listing4-8_zps9qtekzdi.png "Wilken Listing 4.8")
+
+## Chapter 4: Step 5
+
+`git checkout -f step5`
+
+### Reviewing States
+
+We have a reservation state for navigation to the reservation template and controller.
+
+We'll also make a new state in order to load exernal data into the app regarding the weather.
+
+Here is what the code would look like by now:
+
+```javascript
+.config(function ($stateProvider, $urlRouterProvider) {
+
+  $stateProvider
+    .state('home', {
+      url: '/home',
+      templateUrl: 'views/home/home.html'
+    })
+    .state('reservation', {
+      url: '/reservation',
+      controller: 'ReservationController',
+      templateUrl: 'views/reservation/reservation.html'
+    })
+    .state('weather', {
+      url: '/weather',
+      controller: 'WeatherController',
+      templateUrl: 'views/weather/weather.html'
+    });
+
+  $urlRouterProvider.otherwise('/home');
+
+})
+```
+
+asdf
