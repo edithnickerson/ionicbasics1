@@ -315,3 +315,15 @@ You obtain the card by specifying a class for a DIV to use within the `ion-conte
   </ion-content>
 </ion-view>
 ```
+
+How `ion-infinite-scroll` works:
+
+* If the component is within 1% distance of the view area (about to be shown)
+* Then the method declared in the `on-infinite` attribute will be called
+* A loading indicator is shown at first as no restaurants are yet loaded
+* The `nfIf` is there to determine how infinite scroll will be disabled
+* Some of the logic for infinite scroll is handled in the controller
+
+### Restaurants View Controller
+
+![Wilken Listing 4.15](http://i39.photobucket.com/albums/e188/ahuimanu/Listing4-15_zps34dcchea.png "Wilken Listing 4.15")
