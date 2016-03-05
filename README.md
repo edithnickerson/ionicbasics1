@@ -174,3 +174,6 @@ a reference to it in our index.html file:
 ### Weather View
 
 [Much like work we've done together in AngularJS](https://github.com/ahuimanu/cidm4385-2016sp-angular-services "Calling weather services"),
+
+Wilken utilizes a web service API to grab weather for the ficticious Hawaii Resort app.  While we've used the [WeatherUnderground API](https://www.wunderground.com/weather/api/ "Weather Underground API")
+previously, the Wilken book uses [Open Weather Map Api](http://openweathermap.org/api "Open Weather Map API").
