@@ -6,6 +6,14 @@ The book has you downloading parts of his code from Github using the `git clone`
 
 You are fairly familiar with git by now.
 
+## Hawaii Resort App
+
+What is nice about the Wilken book is that it is easy to follow.
+
+Wilkien will walk us through the creation of an App for a ficticious Hawaii Resort.
+
+![Wilken Figure 4.2](http://i39.photobucket.com/albums/e188/ahuimanu/Figure4-2_zpsjtb3h9cc.png "Wilken Figure 4.2")
+
 ## Chapter 4: The Resort App
 
 First, you'll want to make a new cloud9 project and execute these commands within it:
