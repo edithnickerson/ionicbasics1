@@ -105,3 +105,10 @@ It would be possible to use some other font icon library, such as [Font Awesome]
 
 `git checkout -f step4`
 
+### Creating a Controller
+
+Since Ionic is based on Angular, a controller should be familiar.
+
+Among many things, Ionic uses an Angular controller to access the `$scope` service for data binding and other goodies.
+
+![Wilken Figure 4.6](http://i39.photobucket.com/albums/e188/ahuimanu/Figure4-6_zpsmlzmersk.png "Wilken Figure 4.6")
