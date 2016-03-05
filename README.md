@@ -112,3 +112,10 @@ Since Ionic is based on Angular, a controller should be familiar.
 Among many things, Ionic uses an Angular controller to access the `$scope` service for data binding and other goodies.
 
 ![Wilken Figure 4.6](http://i39.photobucket.com/albums/e188/ahuimanu/Figure4-6_zpsmlzmersk.png "Wilken Figure 4.6")
+
+#### A Reservation Controller
+
+Since we're making a resort app, we'll model a reservation at the resort.  Notice that these examples access the `$scope`
+object directly.
+
+![Wilken Listing 4.6](http://i39.photobucket.com/albums/e188/ahuimanu/Listing4-7_zpsu6rj3gg5.png "Wilken Listing 4.6")
