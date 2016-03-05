@@ -77,3 +77,10 @@ You will notice some of these classes in the following listing.
 
 ![Wilken Listing 4.5](http://i39.photobucket.com/albums/e188/ahuimanu/Listing4-5_zpszgyelsuh.png "Wilken Listing 4.5")
 
+Many Ionic components use either CSS or JavaScript to get the UI to look and behave in a specified manner.
+
+### Ionic Icons
+
+Adding standardized icons for your UI is fairly common for both mobile apps and websites.
+
+You can review the icons that come with Ionic here: [https://ionicons.com](https://ionicons.com "Ionic icons").
