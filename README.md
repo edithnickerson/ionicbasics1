@@ -177,3 +177,5 @@ a reference to it in our index.html file:
 
 Wilken utilizes a web service API to grab weather for the ficticious Hawaii Resort app.  While we've used the [WeatherUnderground API](https://www.wunderground.com/weather/api/ "Weather Underground API")
 previously, the Wilken book uses [Open Weather Map Api](http://openweathermap.org/api "Open Weather Map API").
+
+The process for obtaining an API key at Open Weather Map is similar to the process for Weather Underground.
