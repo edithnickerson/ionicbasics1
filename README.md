@@ -26,3 +26,12 @@ Basic ionic components include:
 Some things to watch out for in the code.
 
 ![Wilken Listing 4.1](http://i39.photobucket.com/albums/e188/ahuimanu/Listing4-1_zpsofxp9nt2.png "Wilken Listing 4.1")
+
+##### Views as States
+
+A state is the current representation of an app (from ui-router):
+
+* URL/route associated with the view
+* Controller associated with the view
+* template attached to the view (states are typically linked to a view)
+* ui-router: [https://github.com/angular-ui/ui-router/wiki](https://github.com/angular-ui/ui-router/wiki "ui-router")
