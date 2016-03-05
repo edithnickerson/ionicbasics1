@@ -16,7 +16,9 @@ First, you'll want to make a new cloud9 project and execute these commands withi
 
 `git checkout -f step1`
 
-`ionic serve -p $PORT` <- this is to run on Cloud9
+`ionic serve -p $PORT` this is to run on Cloud9
+
+we'll use the above variation of `ionic serve` several times in the future.
 
 Wilken's chapter 4 example app is for a ficticious resort. Some things it does are:
 
@@ -26,7 +28,7 @@ Wilken's chapter 4 example app is for a ficticious resort. Some things it does a
 
 ## Chapter 4: Step 2
 
-`git clone -f step2`
+`git checkout -f step2`
 
 Basic ionic components include:
 
@@ -65,7 +67,7 @@ The template for the home view.
 ```
 ## Chapter 4: Step 3
 
-`git clone -f step3`
+`git checkout -f step3`
 
 Adding views.
 
@@ -101,5 +103,5 @@ It would be possible to use some other font icon library, such as [Font Awesome]
 
 ## Chapter 4: Step 4
 
-`git clone -f step4`
+`git checkout -f step4`
 
