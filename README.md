@@ -296,3 +296,22 @@ See how this is handled in the controller:
 Next, Wilken shows us how to use the concept of UI "cards," used like a list, to help to create a common UI technique called infinite scrolling.
 
 ![Wilken Figure 4.9](http://i39.photobucket.com/albums/e188/ahuimanu/Figure4-9_zpsxamwsaw3.png "Wilken Figure 4.9")
+
+You obtain the card by specifying a class for a DIV to use within the `ion-content` directive.
+
+```html
+<ion-view view-title="Local Restaurants">
+  <ion-content>
+    <div class="list card" ng-repeat="restaurant in restaurants">
+      <div class="item">
+        <h2>{{restaurant.name}}</h2>
+        <p>{{restaurant.address}}, {{restaurant.city}}</p>
+      </div>
+      <div class="item item-image">
+        <img ng-src="{{restaurant.image_url}}" />
+      </div>
+    </div>
+    <ion-infinite-scroll on-infinite="getRestaurants()" ng-if="total > page" immediate-check="false"></ion-infinite-scroll>
+  </ion-content>
+</ion-view>
+```
