@@ -8,6 +8,13 @@ You are fairly familiar with git by now.
 
 ## Chapter 4: The Resort App
 
+First, you'll want to make a new cloud9 project and execute these commands within it:
+
+`git clone https://github.com/ionic-in-action/chapter4.git`
+`cd chapter4`
+`git checkout -f step1`
+`ionic serve -p $PORT` <- this is to run on Cloud9
+
 Wilken's chapter 4 example app is for a ficticious resort. Some things it does are:
 
 * Handling navigation and routing
@@ -88,3 +95,8 @@ You can review the icons that come with Ionic here: [https://ionicons.com](https
 It would be possible to use some other font icon library, such as [Font Awesome](http://fortawesome.github.io/Font-Awesome/ "Font Awesome"), but the standard ionic/angular icons should do.
 
 ![Wilken Listing 4.6](http://i39.photobucket.com/albums/e188/ahuimanu/Listing4-6_zpsbha2vsac.png "Wilken Listing 4.6")
+
+## Chapter 4: Step 4
+
+`git clone -f step4`
+
