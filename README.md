@@ -64,3 +64,7 @@ Adding views.
 * Scrolling management
 
 ![Wilken Figure 4.5](http://i39.photobucket.com/albums/e188/ahuimanu/Figure4-5_zps8zgvujcm.png "Wilken Figure 4.5")
+
+### CSS for styling
+
+Much as we'd use bootstrap, we'll use some of Ionic's built-in classes to help specify the desired styles for our UI elements.
