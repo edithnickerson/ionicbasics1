@@ -262,3 +262,16 @@ of the `$http.get` method that uses `success` and `error` rather than `then`.
 
 })
 ```
+
+Also be sure to add a reference to the Weather controller in your index.html main template.
+
+```html
+<script src="views/weather/weather.js"></script>
+```
+
+### Adding a Loading Indicator
+
+You are familiar with the tendency for mobile apps, web pages, and even desktop apps to given some indication to the user that
+background work is being performed. We'll use the `$ionicLoading` service to do this.
+
+![Wilken Figure 4.8](http://i39.photobucket.com/albums/e188/ahuimanu/Figure4-8_zpszmasgdki.png "Wilken Figure 4.8")
