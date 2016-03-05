@@ -11,8 +11,11 @@ You are fairly familiar with git by now.
 First, you'll want to make a new cloud9 project and execute these commands within it:
 
 `git clone https://github.com/ionic-in-action/chapter4.git`
+
 `cd chapter4`
+
 `git checkout -f step1`
+
 `ionic serve -p $PORT` <- this is to run on Cloud9
 
 Wilken's chapter 4 example app is for a ficticious resort. Some things it does are:
