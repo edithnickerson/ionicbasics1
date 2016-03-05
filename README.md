@@ -171,4 +171,6 @@ a reference to it in our index.html file:
 <script src="views/reservation/reservation.js"></script>
 ```
 
-asdf
+### Weather View
+
+[Much like work we've done together in AngularJS](https://github.com/ahuimanu/cidm4385-2016sp-angular-services "Calling weather services"),
