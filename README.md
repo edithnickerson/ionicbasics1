@@ -275,3 +275,14 @@ You are familiar with the tendency for mobile apps, web pages, and even desktop 
 background work is being performed. We'll use the `$ionicLoading` service to do this.
 
 ![Wilken Figure 4.8](http://i39.photobucket.com/albums/e188/ahuimanu/Figure4-8_zpszmasgdki.png "Wilken Figure 4.8")
+
+#### show() and hide()
+
+We'll use the show and hide components of the `$ionicLoading` service to help manage this display.
+
+* `show()` is be used while your background loading is underway
+* `hide()` is to be used to hide the loading UI component when the background work is complete
+
+See how this is handled in the controller:
+
+![Wilken Listing 4.13](http://i39.photobucket.com/albums/e188/ahuimanu/Listing4-13_zpsggsyv9rh.png "Wilken Listing 4.13")
