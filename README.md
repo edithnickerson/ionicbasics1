@@ -118,4 +118,10 @@ Among many things, Ionic uses an Angular controller to access the `$scope` servi
 Since we're making a resort app, we'll model a reservation at the resort.  Notice that these examples access the `$scope`
 object directly.
 
-![Wilken Listing 4.6](http://i39.photobucket.com/albums/e188/ahuimanu/Listing4-7_zpsu6rj3gg5.png "Wilken Listing 4.6")
+![Wilken Listing 4.7](http://i39.photobucket.com/albums/e188/ahuimanu/Listing4-7_zpsu6rj3gg5.png "Wilken Listing 4.7")
+
+#### Reservation View Template
+
+Notice some of the new Ionic directives used in this template.
+
+![Wilken Listing 4.8](http://i39.photobucket.com/albums/e188/ahuimanu/Listing4-8_zps9qtekzdi.png "Wilken Listing 4.8")
