@@ -16,6 +16,8 @@ Wilken's chapter 4 example app is for a ficticious resort. Some things it does a
 
 ## Chapter 4: Step 2
 
+`git clone -f step2`
+
 Basic ionic components include:
 
 * `ionicNavView`
@@ -53,6 +55,8 @@ The template for the home view.
 ```
 ## Chapter 4: Step 3
 
+`git clone -f step3`
+
 Adding views.
 
 ### Content container
@@ -68,3 +72,8 @@ Adding views.
 ### CSS for styling
 
 Much as we'd use bootstrap, we'll use some of Ionic's built-in classes to help specify the desired styles for our UI elements.
+
+You will notice some of these classes in the following listing.
+
+![Wilken Listing 4.5](http://i39.photobucket.com/albums/e188/ahuimanu/Listing4-5_zpszgyelsuh.png "Wilken Listing 4.5")
+
