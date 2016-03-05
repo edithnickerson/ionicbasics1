@@ -236,3 +236,29 @@ However, the Wilken code differs from ours in that Wilken uses $http directly in
 
 Also, you could replace his service URL with YOUR Open Weather Map API.  Also note that Wilken is using the older version
 of the `$http.get` method that uses `success` and `error` rather than `then`.
+
+#### Add the Weather view state to www/js/app.js
+
+```javascript
+.config(function ($stateProvider, $urlRouterProvider) {
+
+  $stateProvider
+    .state('home', {
+      url: '/home',
+      templateUrl: 'views/home/home.html'
+    })
+    .state('reservation', {
+      url: '/reservation',
+      controller: 'ReservationController',
+      templateUrl: 'views/reservation/reservation.html'
+    })
+    .state('weather', {
+      url: '/weather',
+      controller: 'WeatherController',
+      templateUrl: 'views/weather/weather.html'
+    });
+
+  $urlRouterProvider.otherwise('/home');
+
+})
+```
