@@ -213,3 +213,15 @@ Here's what a weather view would look like to show the weather from the Open Wea
 </ion-view>
 
 ```
+
+#### Wilken's API vs Open Weather Map
+
+Since Wilken would have to reveal his API key in order to make this app work, he's actually 
+created a proxy service of his own that the code in the chapter calls.
+
+He's set this up to statically call only one location:
+
+[https://ionic-in-action-api.herokuapp.com/weather](https://ionic-in-action-api.herokuapp.com/weather "Wilken's weather service")
+
+
+
