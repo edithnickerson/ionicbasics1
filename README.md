@@ -84,3 +84,7 @@ Many Ionic components use either CSS or JavaScript to get the UI to look and beh
 Adding standardized icons for your UI is fairly common for both mobile apps and websites.
 
 You can review the icons that come with Ionic here: [https://ionicons.com](https://ionicons.com "Ionic icons").
+
+It would be possible to use some other font icon library, such as [Font Awesome](http://fortawesome.github.io/Font-Awesome/ "Font Awesome"), but the standard ionic/angular icons should do.
+
+![Wilken Listing 4.6](http://i39.photobucket.com/albums/e188/ahuimanu/Listing4-6_zpsbha2vsac.png "Wilken Listing 4.6")
