@@ -51,4 +51,16 @@ The template for the home view.
 ```html
 <ion-view view-title="Aloha Resort" hide-back-button="true"></ion-view>
 ```
+### Chapter 4: Step 3
 
+Adding views.
+
+#### Content container
+
+`ionContent` is a wrapper for content in a view. It provides:
+
+* Appropriate height/size for content based on device
+* Header and footer bar integration and awareness
+* Scrolling management
+
+![Wilken Figure 4.5](http://i39.photobucket.com/albums/e188/ahuimanu/Figure4-5_zps8zgvujcm.png "Wilken Figure 4.5")
