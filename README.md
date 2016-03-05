@@ -230,6 +230,9 @@ What is nice is that Wilken is also demonstrating a nice Platform-as-a-Service o
 
 We've used the AngularJS [$http](https://docs.angularjs.org/api/ng/service/$http "$http service") service previously.
 
-However, the Wilken code differs from ours in that Wilken uses $http directly:
+However, the Wilken code differs from ours in that Wilken uses $http directly in his controller:
 
 ![Wilken Listing 4.11](http://i39.photobucket.com/albums/e188/ahuimanu/Listing4-11_zps2saikqkw.png "Wilken Listing 4.11")
+
+Also, you could replace his service URL with YOUR Open Weather Map API.  Also note that Wilken is using the older version
+of the `$http.get` method that uses `success` and `error` rather than `then`.
