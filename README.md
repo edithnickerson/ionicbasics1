@@ -223,5 +223,12 @@ He's set this up to statically call only one location:
 
 [https://ionic-in-action-api.herokuapp.com/weather](https://ionic-in-action-api.herokuapp.com/weather "Wilken's weather service")
 
+What is nice is that Wilken is also demonstrating a nice Platform-as-a-Service option you'd have for hosting your own services: 
+[Heroku](https://www.heroku.com/ "Heroku Cloud Application Hosting").
+
+
+
+
+
 
 
