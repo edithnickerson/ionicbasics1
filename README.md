@@ -110,6 +110,8 @@ I'm not sure if I can recommend this as, although this is free, it is barely fre
 Ionic Creator is a mostly-for-pay service that allows you to use a browser to 
 assist in the GUI/WYSIWYG creation of an Ionic app.
 
+[Ionic Creator](https://creator.ionic.io "Ionic Creator")
+
 [![Ionic Creator](https://creator.ionic.io/img/creator-preview.png "Ionic Creator")](https://creator.ionic.io)
 
 What seems potentially interesting about this is the ability to export back to CLI.  When you pay, it seems that 
