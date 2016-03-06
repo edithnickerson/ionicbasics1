@@ -101,7 +101,7 @@ This is awesome as it will behave as though it were your native app.
 
 This will be very handy: [Ionic View App](http://view.ionic.io/ "Ionic View App")
 
-![Ionic View Logo](http://view.ionic.io/ionicview-logo.png "Ionic View Logo")
+[![Ionic View Logo](http://view.ionic.io/ionicview-logo.png "Ionic View Logo")](http://view.ionic.io/)
 
 ## Ionic Creator
 
