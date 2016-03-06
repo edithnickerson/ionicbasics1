@@ -59,7 +59,7 @@ Chrome Developer Tools Device Mode:
 
 ## Runnig Wilken's Code
 
-All of the book's code is at: [https://github.com/ionic-in-action](https://github.com/ionic-in-action "ionic in action")
+All of the [book's](https://www.manning.com/books/ionic-in-action "Ionic in Action") code is at: [https://github.com/ionic-in-action](https://github.com/ionic-in-action "ionic in action")
 
 You'll notice throughout the chapters that Wilken uses `git` commands so that you can
 `clone` and `checkout` phases or steps of each chapter as you read along.  I __HIGHLY__ recommend you follow along in the book in this manner.
