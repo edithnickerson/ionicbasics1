@@ -6,6 +6,51 @@ The book has you downloading parts of his code from Github using the `git clone`
 
 You are fairly familiar with git by now.
 
+# Notes About Running Ionic Apps
+
+Here are some notes to keep in mind about running ionic apps from now on.  Generally, we are concerned with:
+
+* Developing and running ionic apps on Cloud9
+* Chrome Developer Tools
+* Using Wilken's code
+* Using Ionic Platform and Ionic Lab
+* Previewing the App in the View App
+
+## Developing on Cloud9
+
+Cloud 9 has been a great IDE and runtime environment so far.  We can do almost 
+everything on Cloud9 short of actually deploying to your device.
+
+### Things to remember about Cloud 9
+
+Since we'll run the web version of our apps for testing, recall that you must specify the port for ionic to run on this way on Cloud 9:
+
+`ionic serve -p $PORT`
+
+You'll notice two things when after running this command:
+1. You'll see that the ionic CLI mode is invoked where you are expected to enter server commands
+2. You'll get a running notice from Cloud 9
+
+Running notice:
+![Cloud9 Running Notice](http://i39.photobucket.com/albums/e188/ahuimanu/Figure4-2_zpsjtb3h9cc.png "Cloud9 Running Notice")
+
+Ionic CLI:
+![Ionic CLI](http://i39.photobucket.com/albums/e188/ahuimanu/Ionic%20CLI_zpsrbusjuox.png "Ionic CLI")
+
+## Chrome Developer Tools
+
+`Ctrl + Shift + I` (on windows) will open Chrome's developer tools when in the Chrome browser (recommended).  
+You can also open this up from the "hamburger" menu on the upper right-hand corner 
+of Chrome.  Look under `More Tools` >> `Developer Tools`.
+
+### Previewing Mobile Device
+
+Perhaps the neatest tool offered in Chrome's Developer Tools is the Device Mode. With this, 
+you can preview your ionic page as though it were on the device.
+
+Chrome Developer Tools Device Mode:
+![Chrome Developer Tools Device Mode](http://i39.photobucket.com/albums/e188/ahuimanu/Chrome-Developer-Tools-Device-Mode_zpsletlgav7.png "Chrome Developer Tools Device Mode")
+
 ## Hawaii Resort App
 
 What is nice about the Wilken book is that it is easy to follow.
