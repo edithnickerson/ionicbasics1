@@ -15,6 +15,7 @@ Here are some notes to keep in mind about running ionic apps from now on.  Gener
 * Using Wilken's code
 * Using Ionic Platform and Ionic Lab
 * Previewing the App in the View App
+* Ionic Creator
 
 ## Developing on Cloud9
 
@@ -56,15 +57,40 @@ Chrome Developer Tools Device Mode:
 
 ![Chrome Developer Tools Device Mode](http://i39.photobucket.com/albums/e188/ahuimanu/Chrome-Developer-Tools-Device-Mode_zpsletlgav7.png "Chrome Developer Tools Device Mode")
 
-### Runnig Wilken's Code
+## Runnig Wilken's Code
 
 All of the book's code is at: [https://github.com/ionic-in-action](https://github.com/ionic-in-action "ionic in action")
 
 You'll notice throughout the chapters that Wilken uses `git` commands so that you can
-`clone` and `checkout` phases or steps of each chapter as you read along.  I __HIGHLY__ recommend you follow along 
-in the book in this manner.
+`clone` and `checkout` phases or steps of each chapter as you read along.  I __HIGHLY__ recommend you follow along in the book in this manner.
 
-## Hawaii Resort App
+##Ionic Platform and Ionic Lab
+
+Ionic also offers free app hosting using their `ionic platform` service.
+
+You can sign up for free at [https://apps.ionic.io](https://apps.ionic.io "ionic platform").
+
+What you get from IONIC platform is;
+
+* Security profiles
+* Users and Authentication
+* Push notification service
+* Deployment services
+* Analytics services
+* Packaging
+* API
+ 
+For now, the biggest benefit is to be able to host outside of Cloud9 and for other deployment benefits.
+
+### Ionic Lab
+
+[Ionic Lab](http://lab.ionic.io/ "Ionic Lab")
+
+Ionic Lab is a desktop app available to greatly simplify the process of building, testing and deploying your app.
+
+We may or may not use this later.
+
+# Hawaii Resort App
 
 What is nice about the Wilken book is that it is easy to follow.
 
