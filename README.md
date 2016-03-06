@@ -32,9 +32,11 @@ You'll notice two things when after running this command:
 2. You'll get a running notice from Cloud 9
 
 Running notice:
+
 ![Cloud9 Running Notice](http://i39.photobucket.com/albums/e188/ahuimanu/Figure4-2_zpsjtb3h9cc.png "Cloud9 Running Notice")
 
 Ionic CLI:
+
 ![Ionic CLI](http://i39.photobucket.com/albums/e188/ahuimanu/Ionic%20CLI_zpsrbusjuox.png "Ionic CLI")
 
 ## Chrome Developer Tools
@@ -49,6 +51,7 @@ Perhaps the neatest tool offered in Chrome's Developer Tools is the Device Mode.
 you can preview your ionic page as though it were on the device.
 
 Chrome Developer Tools Device Mode:
+
 ![Chrome Developer Tools Device Mode](http://i39.photobucket.com/albums/e188/ahuimanu/Chrome-Developer-Tools-Device-Mode_zpsletlgav7.png "Chrome Developer Tools Device Mode")
 
 ## Hawaii Resort App
