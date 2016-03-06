@@ -328,6 +328,8 @@ How `ion-infinite-scroll` works:
 
 ![Wilken Listing 4.15](http://i39.photobucket.com/albums/e188/ahuimanu/Listing4-15_zps34dcchea.png "Wilken Listing 4.15")
 
+The controller is created in a separate JS file along with the view.
+
 The steps above:
 
 1. Variables used to track paing - `page`,`total`, and `restaurants`
@@ -338,3 +340,50 @@ The steps above:
 6. Use `$scope.$broacast` to let infinite scroll that the loading of restaurants is complete
 7. Handle any `$http` errors
 8. Start the data loading via the `getRestaurants()` method
+
+We must also add this view state to the app:
+
+```javascript
+.config(function ($stateProvider, $urlRouterProvider) {
+
+  $stateProvider
+    .state('home', {
+      url: '/home',
+      templateUrl: 'views/home/home.html'
+    })
+    .state('reservation', {
+      url: '/reservation',
+      controller: 'ReservationController',
+      templateUrl: 'views/reservation/reservation.html'
+    })
+    .state('weather', {
+      url: '/weather',
+      controller: 'WeatherController',
+      templateUrl: 'views/weather/weather.html'
+    })
+    .state('restaurants', {
+      url: '/restaurants',
+      controller: 'RestaurantsController',
+      templateUrl: 'views/restaurants/restaurants.html'
+    });
+
+  $urlRouterProvider.otherwise('/home');
+
+})
+```
+
+And also add this controller to the index. html file:
+
+```html
+<script src="views/restaurants/restaurants.js"></script>
+```
+
+## Chapter 4: Step 7
+
+`git checkout -f step7`
+
+## SlideBox component for the App Intro
+
+We can create a simple slideshow with `ionSlideBox` for the "splash" page of our app.
+
+![Wilken Figure 4.10](http://i39.photobucket.com/albums/e188/ahuimanu/Figure4-10_zpsr20ohwca.png "Wilken Figure 4.10")
