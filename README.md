@@ -90,7 +90,7 @@ For now, the biggest benefit is to be able to host outside of Cloud9 and for oth
 
 Ionic Lab is a desktop app available to greatly simplify the process of building, testing and deploying your app.
 
-We may or may not use this later.
+We may or may not use this later.  We most likely __WON'T__ need this as we'll be using the CLI tools.
 
 ## Previewing in the Ionic Viewer
 
