@@ -123,7 +123,7 @@ The primarily utility to this app seems to be the potential for collaboration an
 
 What is nice about the [Wilken Book](https://www.manning.com/books/ionic-in-action "Jeremy Wilken") is that it is easy to follow.
 
-![Jeremy Wilken - Ionic In Action](https://images.manning.com/310/310/crop/book/c/273c2c8-7fd6-4956-b1ea-e2c95b647a2a/Wilken-Ionic-HI.png "Ionic in Action")
+[![Jeremy Wilken - Ionic In Action](https://images.manning.com/310/310/crop/book/c/273c2c8-7fd6-4956-b1ea-e2c95b647a2a/Wilken-Ionic-HI.png "Ionic in Action")](https://www.manning.com/books/ionic-in-action)
 
 Wilkien will walk us through the creation of an App for a ficticious Hawaii Resort.
 
