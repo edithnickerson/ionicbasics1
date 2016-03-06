@@ -106,7 +106,7 @@ This will be very handy: [Ionic View App](http://view.ionic.io/ "Ionic View App"
 
 # Hawaii Resort App
 
-What is nice about the Wilken book is that it is easy to follow.
+What is nice about the [Wilken Book](https://www.manning.com/books/ionic-in-action "Jeremy Wilken") is that it is easy to follow.
 
 Wilkien will walk us through the creation of an App for a ficticious Hawaii Resort.
 
