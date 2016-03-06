@@ -393,3 +393,20 @@ We'll use the `$ionSlideBoxDelegate` service to programmatically control the sli
 ### The Tour View Template
 
 ![Wilken Listing 4.16](http://i39.photobucket.com/albums/e188/ahuimanu/Listing4-16_zpsbofxourm.png "Wilken Listing 4.16")
+
+Some supplemental CSS for each slide:
+
+```css
+#tour-view .slider {
+  height: 100%;
+}
+#tour-view .slider-slide {
+  padding-top: 100px;
+  text-align: center;
+}
+#tour-view .icon-slide {
+  font-size: 20em;
+  display: inline-block;
+}
+
+```
