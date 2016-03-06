@@ -86,6 +86,8 @@ For now, the biggest benefit is to be able to host outside of Cloud9 and for oth
 
 [Ionic Lab](http://lab.ionic.io/ "Ionic Lab")
 
+![Ionic Lab](http://lab.ionic.io/images/touch/chrome-touch-icon-192x192.png "Ionic Lab")
+
 Ionic Lab is a desktop app available to greatly simplify the process of building, testing and deploying your app.
 
 We may or may not use this later.
