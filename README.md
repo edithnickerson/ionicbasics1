@@ -410,3 +410,9 @@ Some supplemental CSS for each slide:
 }
 
 ```
+
+Ensure that these CSS styles are referenced in our index.html master template:
+
+```html
+<link href="views/tour/tour.css" rel="stylesheet">
+```
