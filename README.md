@@ -45,6 +45,8 @@ Ionic CLI:
 You can also open this up from the "hamburger" menu on the upper right-hand corner 
 of Chrome.  Look under `More Tools` >> `Developer Tools`.
 
+![Chrome Developer Tools](http://i39.photobucket.com/albums/e188/ahuimanu/Chrome-Developer-Tools_zps8sfpqiad.png "Chrome Developer Tools")
+
 ### Previewing Mobile Device
 
 Perhaps the neatest tool offered in Chrome's Developer Tools is the Device Mode. With this, 
