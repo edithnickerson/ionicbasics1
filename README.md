@@ -416,3 +416,38 @@ Ensure that these CSS styles are referenced in our index.html master template:
 ```html
 <link href="views/tour/tour.css" rel="stylesheet">
 ```
+
+Also, update the Tour state in app.js
+
+```javascript
+.config(function ($stateProvider, $urlRouterProvider) {
+
+  $stateProvider
+    .state('home', {
+      url: '/home',
+      templateUrl: 'views/home/home.html'
+    })
+    .state('reservation', {
+      url: '/reservation',
+      controller: 'ReservationController',
+      templateUrl: 'views/reservation/reservation.html'
+    })
+    .state('weather', {
+      url: '/weather',
+      controller: 'WeatherController',
+      templateUrl: 'views/weather/weather.html'
+    })
+    .state('restaurants', {
+      url: '/restaurants',
+      controller: 'RestaurantsController',
+      templateUrl: 'views/restaurants/restaurants.html'
+    })
+    .state('tour', {
+      url: '/tour',
+      templateUrl: 'views/tour/tour.html'
+    });
+
+  $urlRouterProvider.otherwise('/tour');
+
+})
+```
