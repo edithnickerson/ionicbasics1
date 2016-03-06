@@ -56,6 +56,14 @@ Chrome Developer Tools Device Mode:
 
 ![Chrome Developer Tools Device Mode](http://i39.photobucket.com/albums/e188/ahuimanu/Chrome-Developer-Tools-Device-Mode_zpsletlgav7.png "Chrome Developer Tools Device Mode")
 
+### Runnig Wilken's Code
+
+All of the book's code is at: [https://github.com/ionic-in-action](https://github.com/ionic-in-action "ionic in action")
+
+You'll notice throughout the chapters that Wilken uses `git` commands so that you can
+`clone` and `checkout` phases or steps of each chapter as you read along.  I __HIGHLY__ recommend you follow along 
+in the book in this manner.
+
 ## Hawaii Resort App
 
 What is nice about the Wilken book is that it is easy to follow.
