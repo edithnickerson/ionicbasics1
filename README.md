@@ -92,6 +92,18 @@ Ionic Lab is a desktop app available to greatly simplify the process of building
 
 We may or may not use this later.
 
+## Previewing in the Ionic Viewer
+
+Both the Android and Ios App stores have an app from Ionic availbale which lets you 
+download your app from the Ionic Platform and preview your app on your device.
+
+This is awesome as it will behave as though it were your native app.
+
+This will be very handy: [Ionic View App](http://view.ionic.io/ "Ionic View App")
+
+![Ionic View Logo](http://view.ionic.io/ionicview-logo.png "Ionic View Logo")
+
+
 # Hawaii Resort App
 
 What is nice about the Wilken book is that it is easy to follow.
