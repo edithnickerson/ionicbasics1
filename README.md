@@ -327,3 +327,14 @@ How `ion-infinite-scroll` works:
 ### Restaurants View Controller
 
 ![Wilken Listing 4.15](http://i39.photobucket.com/albums/e188/ahuimanu/Listing4-15_zps34dcchea.png "Wilken Listing 4.15")
+
+The steps above:
+
+1. Variables used to track paing - `page`,`total`, and `restaurants`
+2. Method to call to fetch a restaurant - `getRestaurants()`
+3. Increment page value and make `$http` request
+4. Store request results into the end of an array of restaurants
+5. Set the total value of restaurants found
+6. Use `$scope.$broacast` to let infinite scroll that the loading of restaurants is complete
+7. Handle any `$http` errors
+8. Start the data loading via the `getRestaurants()` method
