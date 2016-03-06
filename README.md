@@ -387,3 +387,9 @@ And also add this controller to the index. html file:
 We can create a simple slideshow with `ionSlideBox` for the "splash" page of our app.
 
 ![Wilken Figure 4.10](http://i39.photobucket.com/albums/e188/ahuimanu/Figure4-10_zpsr20ohwca.png "Wilken Figure 4.10")
+
+We'll use the `$ionSlideBoxDelegate` service to programmatically control the slidebox. We'll also use CSS to assist in specifying how the slidebox works.
+
+### The Tour View Template
+
+![Wilken Listing 4.16](http://i39.photobucket.com/albums/e188/ahuimanu/Listing4-16_zpsbofxourm.png "Wilken Listing 4.16")
