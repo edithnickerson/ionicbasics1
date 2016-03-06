@@ -112,6 +112,11 @@ assist in the GUI/WYSIWYG creation of an Ionic app.
 
 ![Ionic Creator](https://creator.ionic.io/img/creator-preview.png "Ionic Creator")
 
+What seems potentially interesting about this is the ability to export back to CLI.  When you pay, it seems that 
+it can export to native.
+
+The primarily utility to this app seems to be the potential for collaboration and for its graphical UI designer.
+
 # Hawaii Resort App
 
 What is nice about the [Wilken Book](https://www.manning.com/books/ionic-in-action "Jeremy Wilken") is that it is easy to follow.
