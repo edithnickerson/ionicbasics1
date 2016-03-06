@@ -33,7 +33,7 @@ You'll notice two things when after running this command:
 
 Running notice:
 
-![Cloud9 Running Notice](http://i39.photobucket.com/albums/e188/ahuimanu/Figure4-2_zpsjtb3h9cc.png "Cloud9 Running Notice")
+![Cloud9 Running Notice](http://i39.photobucket.com/albums/e188/ahuimanu/Cloud9-RunningNotice_zpsohxygrzo.png "Cloud9 Running Notice")
 
 Ionic CLI:
 
