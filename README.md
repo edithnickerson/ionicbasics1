@@ -22,6 +22,16 @@ Here are some notes to keep in mind about running ionic apps from now on.  Gener
 Cloud 9 has been a great IDE and runtime environment so far.  We can do almost 
 everything on Cloud9 short of actually deploying to your device.
 
+##Install Ionic for every project
+
+For every project you'll need to install ionic and cordova:
+
+`npm install -g ionic`
+ 
+ and 
+ 
+ `npm install -q cordova`
+
 ### Things to remember about Cloud 9
 
 Since we'll run the web version of our apps for testing, recall that you must specify the port for ionic to run on this way on Cloud 9:
