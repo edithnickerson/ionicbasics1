@@ -24,7 +24,7 @@ everything on Cloud9 short of actually deploying to your device.
 
 ##Install Ionic for every project
 
-For every project you'll need to install ionic and cordova:
+For every C9 ionic project you'll need to install `ionic` and `cordova`:
 
 `npm install -g ionic`
  
