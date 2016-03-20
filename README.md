@@ -50,6 +50,14 @@ Ionic CLI:
 
 ![Ionic CLI](http://i39.photobucket.com/albums/e188/ahuimanu/Ionic%20CLI_zpsrbusjuox.png "Ionic CLI")
 
+### Updating Ionic Libraries
+
+Update Ionic library files, which are found in the www/lib/ionic directory. If bower is being used
+by the project, this command will automatically run bower update ionic, otherwise this command updates
+the local static files from Ionic’s CDN.
+
+`$ ionic lib update`
+
 ## Chrome Developer Tools
 
 `Ctrl + Shift + I` (on windows) will open Chrome's developer tools when in the Chrome browser (recommended).  
