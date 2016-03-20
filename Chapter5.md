@@ -43,7 +43,22 @@ Notes:
 
 ![Wilken Figure 5.3](http://i39.photobucket.com/albums/e188/ahuimanu/Figure5-3_zpsuwuda247.png "Giving tabs individual histories with ionViews")
 
+## Chapter 5: Step 3
+
+Notes:
+
 * We'll use the `name` attribute of each `ion-view` to be able to call the tab/view by name
 * We'll use the `ui-sref` attribute that uses tab icons as buttons
 * 
 ![Wilken Figure 5.4](http://i39.photobucket.com/albums/e188/ahuimanu/Figure5-4_zpsskkoelqi.png "Tabs with individual titles and histories")
+
+* You can create a `parent.child` relationship among states
+* you can set the `abstract` property on a parent such that it can't be an active/concrete state
+* Child routes are appended onto the parent route
+* create the views and contents for each tab
+ 
+## Chapter5: Step 4
+
+Notes:
+
+* uses the [BitcoinAverage API](https://bitcoinaverage.com "BitcoinAverage API")
