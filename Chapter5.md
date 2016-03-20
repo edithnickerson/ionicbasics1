@@ -14,10 +14,10 @@ Covers:
 
 We have arrived at a point where understanding a handful of main aspects of Ionic will greatly benefit your progression:
 
-1 [Ionic CSS components](http://ionicframework.com/docs/components/ "Ionic CSS")
-2 [Ionicons (great icons for tight and consistent UIs)](http://ionicons.com/ "Ionic Icons")
-3 [HTML5 Input Types](http://ionicframework.com/html5-input-types/ "HTML Inputs")
-4 [JavaScript API (implements some of the UI magic)](http://ionicframework.com/docs/api/ "JavaScript to make Ionic pop")
+1. [Ionic CSS components](http://ionicframework.com/docs/components/ "Ionic CSS")
+2. [Ionicons (great icons for tight and consistent UIs)](http://ionicons.com/ "Ionic Icons")
+3. [HTML5 Input Types](http://ionicframework.com/html5-input-types/ "HTML Inputs")
+4. [JavaScript API (implements some of the UI magic)](http://ionicframework.com/docs/api/ "JavaScript to make Ionic pop")
 
 ## Ion
 
