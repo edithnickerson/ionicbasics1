@@ -118,3 +118,13 @@ The popover management code will look like this:
     $scope.popover.remove();
   });
 ```
+
+* A popover, like a modal dialog, will have to have its memory reclaimed when the containing controller goes out of scope.  Otherwise, the resources allocated to the popover will never be released
+
+We also add in the popover trigger button code in the template
+
+```html
+  <ion-nav-buttons side="primary">
+    <button class="button" ng-click="openHelp($event)">About</button>
+  </ion-nav-buttons>
+```
