@@ -19,9 +19,8 @@ We have arrived at a point where understanding a handful of main aspects of Ioni
 3. [HTML5 Input Types](http://ionicframework.com/html5-input-types/ "HTML Inputs")
 4. [JavaScript API (implements some of the UI magic)](http://ionicframework.com/docs/api/ "JavaScript to make Ionic pop")
 
-## Ion
+The point here isn't to exhaustively go over there, but to point out that you can get creative on your own by exploring these past where Wilken takes us with them.
 
- 
 ## Bitcoin app
 
 We are building this app:
