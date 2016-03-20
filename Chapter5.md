@@ -1,0 +1,31 @@
+# Chapter 5
+
+Covers:
+
+* Tabs
+* Tabs with individual histories
+* Lists
+    * Toggling
+    * Reordering
+* Pull-to-refresh data loading
+* Mobile forms
+ 
+## Bitcoin app
+
+We are building this app:
+
+![Figure 5-1](http://i39.photobucket.com/albums/e188/ahuimanu/Figure5-1_zpssfmkgyx2.png "Wilken Figure 5.1")
+
+## Getting the App
+
+As usual with the Wilken book, we do these steps to get started:
+
+1) Make your own project
+`ionic start mychapter5 https://github.com/ionic-in-action/starter`
+2) Follow along with Wilken's solution
+`git clone https://github.com/ionic-in-action/chapter5.git`
+`cd chapter5`
+`git checkout -f step1`
+3)
+Periodically run it
+`ionic serve -p $PORT --nolivereload`
