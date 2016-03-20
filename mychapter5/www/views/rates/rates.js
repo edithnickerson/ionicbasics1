@@ -27,6 +27,7 @@ angular.module('App')
   };
   
   $scope.loadSchedule = function(){
+    console.log("load called at: " + date().now);
     $scope.load();
   };
   
