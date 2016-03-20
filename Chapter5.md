@@ -214,5 +214,118 @@ Tempalte:
     <highchart config="chart"></highchart>
   </ion-content>
 </ion-view>
+```
+
+Notes:
+
+* We've used `ngModel` in Angular and we know it uses `$scope` to bind back to the controller code.
+
+
+### The History Controller
+
+Notes:
+
+* We configure highcharts here and it does its __Magic__.
+* Highcharts uses a csv version of the bitcoinaverage API, which makes things much easier.
+* You can specify parameters for a state using this syntax: `state?parameter` (i.e. `/history?currency`)
+
+```javascript
+angular.module('App')
+.controller('HistoryController', function ($scope, $http, $state, $stateParams, Currencies) {
+
+  $scope.history = {
+    currency: $stateParams.currency || 'USD'
+  };
+  $scope.currencies = Currencies;
+
+  $scope.changeCurrency = function () {
+    $state.go('tabs.history', { currency: $scope.history.currency });
+  };
+
+  $scope.chart = {
+    options: {
+      chart: {
+        type: 'line'
+      },
+      legend: {
+        enabled: false
+      }
+    },
+    title: {
+      text: null
+    },
+    yAxis: {
+      title: null
+    },
+    xAxis: {
+      type: 'datetime'
+    },
+    series: []
+  };
+
+  $http.get('https://api.bitcoinaverage.com/history/' + $scope.history.currency + '/per_hour_monthly_sliding_window.csv').success(function (prices) {
+
+    prices = prices.split(/\n/);
+    var series = {
+      data: []
+    };
+
+    angular.forEach(prices, function (price, index) {
+      price = price.split(',');
+      var date = new Date(price[0].replace(' ', 'T')).getTime();
+      var value = parseFloat(price[3]);
+      if (date && value > 0) {
+        series.data.push([date, value]);
+      }
+    });
+
+    $scope.chart.series.push(series);
+  });
+
+  $scope.$on('$ionicView.beforeEnter', function() {
+    $scope.history = {
+      currency: $stateParams.currency || 'USD'
+    };
+  });
+});
+
+```
+
+Running the app at this point is highly impressive.  Highcharts is pretty cool.
+
+## Chapter 5: Step 8
+
+`git checkout -f step8`
+
+In this step, we present a selectable and re-orderable list such that the user can configure the currency list.
+
+![Using Lists](http://i39.photobucket.com/albums/e188/ahuimanu/Figure5-9_zpsv2nrsj4d.png "Using Lists")
+
+Notes: 
+
+* `ionReorderButton` works with an ionList directive.
+
+### The Currencies Template
+
+```html
+<ion-view view-title="Currencies">
+  <ion-nav-buttons side="primary">
+    <button class="button" ng-click="state.reordering = !state.reordering">Reorder</button>
+  </ion-nav-buttons>
+  <ion-content>
+    <ion-list show-reorder="state.reordering">
+      <ion-item class="item-toggle" ng-repeat="currency in currencies">
+        {{currency.code}} - {{currency.text}}
+        <label class="toggle toggle-balanced">
+        <input type="checkbox" ng-model="currency.selected">
+          <div class="track">
+            <div class="handle"></div>
+          </div>
+        </label>
+        <ion-reorder-button class="ion-navicon" on-reorder="move(currency, $fromIndex, $toIndex)"></ion-reorder-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
 
 ```
