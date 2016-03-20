@@ -87,5 +87,34 @@ Notes:
 Refresh the rates and display help.
 
 * `ionRefresher` is a component that allows users to pull down on the screen and release to trigger a data refresh
+    * This is attached to any `ionContent`
+    * We use the `on-refresh` property of the `ionRefresher` component
+* `ionPopoverView` allows for the use of an about popup/over to show help text
 
 ![Ion Refresher](http://i39.photobucket.com/albums/e188/ahuimanu/Figure5-7_zpswuxk89cr.png "Refreshing with ionRefresher")
+
+* In the contoller, we add a `finally()` method to the `$http.get` which uses part of the Angular __Promises__ API to broadcast a `scroll.refreshComplete` event.
+    * As a part of the Promises API for callbacks and asynchronous programming, `finally()` ensures that code is called whether a refresh actually worked or not.
+* The `ionicPopover` component is usually connected to a button.
+    * It displays a "pop up" that is somewhat dictacted by how the underlying platform works.
+    * Create the popover view template right next to the template containing the button that calls on the template.
+* An `ionPopoverView` is used rather than an `ionView`
+    * This is wrapped in an `ionHeaderBar` and an `ionContent` component
+    * You register the popover as you would with a state, however, this is done in the Controller as the popover is not global an belongs to the view calling.
+
+
+The popover management code will look like this:
+
+```javascript
+  $ionicPopover.fromTemplateUrl('views/rates/help-popover.html', {
+    scope: $scope,
+  }).then(function (popover) {
+    $scope.popover = popover;
+  });
+  $scope.openHelp = function($event) {
+    $scope.popover.show($event);
+  };
+  $scope.$on('$destroy', function() {
+    $scope.popover.remove();
+  });
+```
