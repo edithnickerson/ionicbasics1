@@ -14,7 +14,7 @@ Covers:
 
 We are building this app:
 
-![Figure 5-1](http://i39.photobucket.com/albums/e188/ahuimanu/Figure5-1_zpssfmkgyx2.png "Wilken Figure 5.1")
+![Wilken Figure 5-1](http://i39.photobucket.com/albums/e188/ahuimanu/Figure5-1_zpssfmkgyx2.png "Wilken Figure 5.1")
 
 ## Getting the App
 
@@ -34,4 +34,12 @@ Periodically run it
 
 The discussion here is to add tabs and navigation.
 
+Notes:
 
+* You can't place `ionTabs` into an `ionContent`
+* You place an `ionTab` within an `ionTabs` container
+* We generally place an `ionNavVeiw` within each `ionTab`
+* Using an `ionNavView` within each tab has the advantage of being able to cycle through a stack of views much as we would use a browser tab to move through several websites
+* 
+
+![Wilken Figure 5.3](http://i39.photobucket.com/albums/e188/ahuimanu/Figure5-3_zpsuwuda247.png "Giving tabs individual histories with ionViews")
