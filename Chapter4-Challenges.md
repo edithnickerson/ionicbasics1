@@ -1,4 +1,4 @@
-# Chapter Challenges
+# Chapter 4 Challenges
 
 * Add a new state - try something new
     * _Complete - Simple state regarding directions_

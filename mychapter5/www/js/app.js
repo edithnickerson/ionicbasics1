@@ -1,4 +1,4 @@
-angular.module('App', ['ionic'])
+angular.module('App', ['ionic', 'highcharts-ng'])
 
 .config(function ($stateProvider, $urlRouterProvider) {
 
@@ -13,15 +13,16 @@ angular.module('App', ['ionic'])
       views: {
         'rates-tab': {
           templateUrl: 'views/rates/rates.html',
-          controller: 'RatesController as rc'
+          controller: 'RatesController'
         }
       }
     })
     .state('tabs.history', {
-      url: '/history',
+      url: '/history?currency',
       views: {
         'history-tab': {
-          templateUrl: 'views/history/history.html'
+          templateUrl: 'views/history/history.html',
+          controller: 'HistoryController'
         }
       }
     })
@@ -29,7 +30,17 @@ angular.module('App', ['ionic'])
       url: '/currencies',
       views: {
         'currencies-tab': {
-          templateUrl: 'views/currencies/currencies.html'
+          templateUrl: 'views/currencies/currencies.html',
+          controller: 'CurrenciesController'
+        }
+      }
+    })
+    .state('tabs.detail', {
+      url: '/detail/:currency',
+      views: {
+        'rates-tab': {
+          templateUrl: 'views/detail/detail.html',
+          controller: 'DetailController'
         }
       }
     });
@@ -53,9 +64,8 @@ angular.module('App', ['ionic'])
     { code: 'AUD', text: 'Australian Dollar', selected: true },
     { code: 'BRL', text: 'Brazilian Real', selected: false },
     { code: 'CAD', text: 'Canadian Dollar', selected: true },
-    { code: 'CHF', text: 'Swiss Franc', selected: false },
+    //{ code: 'CHF', text: 'Swiss Franc', selected: false },
     { code: 'CNY', text: 'Chinese Yuan', selected: true},
-    { code: 'DKK', text: 'Danish Krone', selected: true},
     { code: 'EUR', text: 'Euro', selected: true },
     { code: 'GBP', text: 'British Pound Sterling', selected: true },
     { code: 'IDR', text: 'Indonesian Rupiah', selected: false },
