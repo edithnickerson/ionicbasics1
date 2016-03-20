@@ -11,31 +11,7 @@ angular.module('App', ['ionic'])
     return $http.get('https://ionic-in-action-api.herokuapp.com/weather');
   };
 
-  /*    
-    //factory allows us to specify an object to send back
-    var weatherService = {};
-    
-    //weather underground API key
-    var key = "e0d2934addfbff88";
-
-    //get current rest conditions
-    weatherService.getCurrentConditions = function(city){
-        
-        //for the API
-        var url = "https://api.wunderground.com/api/" +
-                  key + 
-                  "/conditions/q/" + 
-                  city.state + "/" +
-                  city.url_name + ".json" + "?callback=JSON_CALLBACK";
-        
-        console.log(url);
-        
-        return $http.jsonp(url);
-
-    };
-    */
-    
-    return weatherService;
+  return weatherService;
 
 }])
 .factory("localStorageService", function($window, $rootScope) {
