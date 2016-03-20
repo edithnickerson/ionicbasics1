@@ -58,6 +58,12 @@ the local static files from Ionic’s CDN.
 
 `$ ionic lib update`
 
+### CLI options
+
+Ionic's live reload service will behave oddly on C9.  You can turn it off:
+
+`ionic serve -p $PORT --nolivereload`
+
 ## Chrome Developer Tools
 
 `Ctrl + Shift + I` (on windows) will open Chrome's developer tools when in the Chrome browser (recommended).  
