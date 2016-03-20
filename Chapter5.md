@@ -29,3 +29,9 @@ As usual with the Wilken book, we do these steps to get started:
 3)
 Periodically run it
 `ionic serve -p $PORT --nolivereload`
+
+## Chapter 5: Step 2
+
+The discussion here is to add tabs and navigation.
+
+
