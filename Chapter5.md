@@ -304,6 +304,10 @@ In this step, we present a selectable and re-orderable list such that the user c
 Notes: 
 
 * `ionReorderButton` works with an ionList directive.
+* The `ionList` component uses the `show-reorder` attribute to determine whether the `ionReorderButton` should be shown
+* The `on-reorder` method allows for the specification of what method should handle reordering
+    * `$fromIndex` and `$toIndex` makes it possible to keep track of the reordering the users makes
+* `ionToggle` provides a UI for manipulating values in an `ngModel` such as `currency.selected`.
 
 ### The Currencies Template
 
@@ -329,3 +333,36 @@ Notes:
 </ion-view>
 
 ```
+
+### The Currencies Controller
+
+Notes:
+* Notice the older way that all of this code uses `$scope` directly.
+* We listen for the `$stateChangeStart` event on the `$scope` in order to disable reordering when the tab loses focus.
+* The `move()` method handles the reordering by dealing with the `$scope.currencies` array directly
+* Note the use of our Currencies service
+    * All controllers will share/use this service.
+    * Reordering the list in the currencies controller will now be reflected when any other controller uses the service.
+
+```javascript
+angular.module('App')
+.controller('CurrenciesController', function ($scope, Currencies) {
+  $scope.currencies = Currencies;
+  $scope.state = {
+    reordering: false
+  };
+
+  $scope.$on('$stateChangeStart', function () {
+    $scope.state.reordering = false;
+  });
+
+  $scope.move = function(currency, fromIndex, toIndex) {
+    $scope.currencies.splice(fromIndex, 1);
+    $scope.currencies.splice(toIndex, 0, currency);
+  };
+});
+
+```
+
+At this point the app is complete.
+
