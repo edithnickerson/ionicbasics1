@@ -377,3 +377,28 @@ angular.module('App')
 
 At this point the app is complete.
 
+# Uploading and Viewing
+
+Since we have __Ionic View__ available, we can use our gree Ionic account to 
+upload our app to the Ionic platform in order to download it to Ionic View on our devices.
+
+While this is no substitute for compiling and running on our devices, this does give you a sense
+of how things will look on the device.
+
+##Ionic Account
+
+It is important to have an Ionic account in order to use the Ionic Platform.
+
+##Uploading your Ionic App
+
+Using the Ionic CLI, change directories to your Ionic app’s directory and run the following command:
+
+`ionic upload`
+
+You will be prompted for your username and password (the one you received when you signed up).
+
+##Viewing your Ionic App
+
+Again, install the ‘Ionic View’ app from the App Store.
+
+Log in with your credentials. Once logged in, you should see the app you uploaded previously.

@@ -1,5 +1,5 @@
 angular.module('App')
-.controller('RatesController', function ($scope, $http, $ionicPopover, Currencies) {
+.controller('RatesController', function ($scope, $http, $ionicPopover, $interval, Currencies) {
   
   $scope.currencies = Currencies;
 
@@ -25,6 +25,13 @@ angular.module('App')
       $scope.$broadcast('scroll.refreshComplete');
     });
   };
-
+  
+  $scope.loadSchedule = function(){
+    $scope.load();
+  };
+  
+  var promise = $interval($scope.loadSchedule, 60 * 1000);
+  
+  //call once
   $scope.load();
 });
