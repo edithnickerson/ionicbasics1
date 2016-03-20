@@ -40,6 +40,10 @@ Notes:
 * You place an `ionTab` within an `ionTabs` container
 * We generally place an `ionNavVeiw` within each `ionTab`
 * Using an `ionNavView` within each tab has the advantage of being able to cycle through a stack of views much as we would use a browser tab to move through several websites
-* 
 
 ![Wilken Figure 5.3](http://i39.photobucket.com/albums/e188/ahuimanu/Figure5-3_zpsuwuda247.png "Giving tabs individual histories with ionViews")
+
+* We'll use the `name` attribute of each `ion-view` to be able to call the tab/view by name
+* We'll use the `ui-sref` attribute that uses tab icons as buttons
+* 
+![Wilken Figure 5.4](http://i39.photobucket.com/albums/e188/ahuimanu/Figure5-4_zpsskkoelqi.png "Tabs with individual titles and histories")
