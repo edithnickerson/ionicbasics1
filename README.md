@@ -36,7 +36,7 @@ For every C9 ionic project you'll need to install `ionic` and `cordova`:
 
 Since we'll run the web version of our apps for testing, recall that you must specify the port for ionic to run on this way on Cloud 9:
 
-`ionic serve -p $PORT`
+`ionic serve -p $PORT --nolivereload`
 
 You'll notice two things when after running this command:
 1. You'll see that the ionic CLI mode is invoked where you are expected to enter server commands
