@@ -30,7 +30,7 @@ For every C9 ionic project you'll need to install `ionic` and `cordova`:
  
  and 
  
- `npm install -q cordova`
+ `npm install -g cordova`
 
 ### Things to remember about Cloud 9
 
