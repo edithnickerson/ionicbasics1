@@ -21,7 +21,7 @@ angular.module('App')
 
   rc.load = function () {
     $http.get('https://api.bitcoinaverage.com/ticker/all').success(function (tickers) {
-      angular.forEach($scope.currencies, function (currency) {
+      angular.forEach(rc.currencies, function (currency) {
         currency.ticker = tickers[currency.code];
         currency.ticker.timestamp = new Date(currency.ticker.timestamp);
       });
@@ -32,7 +32,7 @@ angular.module('App')
   
   $scope.loadSchedule = function(){
     console.log("load called at: " + Date.now());
-    $scope.load();
+    rc.load();
   };
   
   //methods for the indexedDB service
@@ -75,7 +75,7 @@ angular.module('App')
   }
 
   //try to call from the DB   
-  rc.init();
+  //rc.init();
   
   //call on 1-minute interval
   var promise = $interval($scope.loadSchedule, 60 * 1000);

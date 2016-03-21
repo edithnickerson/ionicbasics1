@@ -60,10 +60,10 @@ angular.module('App', ['ionic', 'highcharts-ng'])
         var result = e.target.result;
         if(result === null || result === undefined)
         {
-          deferred.resolve(todos);
+          deferred.resolve(rates);
         }
         else{
-          todos.push(result.value);
+          rates.push(result.value);
           if(result.value.id > lastIndex){
             lastIndex=result.value.id;
           }
@@ -109,6 +109,7 @@ angular.module('App', ['ionic', 'highcharts-ng'])
     return deferred.promise;
   };
   
+  // DELETE RATES ------------------------------------------------------------//
   indexDBService.deleteRates = function(id){
     
     var deferred = $q.defer();
@@ -153,7 +154,7 @@ angular.module('App', ['ionic', 'highcharts-ng'])
       views: {
         'rates-tab': {
           templateUrl: 'views/rates/rates.html',
-          controller: 'RatesController'
+          controller: 'RatesController as rc'
         }
       }
     })
