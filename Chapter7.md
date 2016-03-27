@@ -335,9 +335,10 @@ this section of Chapter 7 discusses the matter further.
 Options:
 
 1. LocalStorage
-2. IndexedDB
-3. SQLite / Web SQL
-4. Using a REST service
+2. IndexedDB (not fully supported)
+3. SQLite
+4. Web SQL (deprecated)
+5. Using a REST service
 
 ## LocalStorage
 
@@ -352,3 +353,111 @@ We've alread used local storage.  Some limitations:
 If we think about the favorites from the weather app in Chapter 6, we can imagine that the favorite cities may have been persisted so that we have them from execution to execution of the app:
 
 ![LocalStorage to hold weather favorites](http://i39.photobucket.com/albums/e188/ahuimanu/Figure7-3_zpsafdagvnq.png "local storage")
+
+Here are some changes we have made to the `Locations` service in the Chapter 6 weather app to use persistence:
+
+```javascript
+.factory('Locations', function ($ionicPopup) {
+  function store () {
+    localStorage.setItem('locations', angular.toJson(Locations.data));
+  }
+
+  var Locations = {
+    data: [],
+    getIndex: function (item) {
+      var index = -1;
+      angular.forEach(Locations.data, function (location, i) {
+        if (item.lat == location.lat && item.lng == location.lng) {
+          index = i;
+        }
+      });
+      return index;
+    },
+    toggle: function (item) {
+      var index = Locations.getIndex(item);
+      if (index >= 0) {
+        $ionicPopup.confirm({
+          title: 'Are you sure?',
+          template: 'This will remove ' + Locations.data[index].city
+        }).then(function (res) {
+          if (res) {
+            Locations.data.splice(index, 1);
+          }
+        });
+      } else {
+        Locations.data.push(item);
+        $ionicPopup.alert({
+          title: 'Location saved'
+        });
+      }
+      store();
+    },
+    primary: function (item) {
+      var index = Locations.getIndex(item);
+      if (index >= 0) {
+        Locations.data.splice(index, 1);
+        Locations.data.splice(0, 0, item);
+      } else {
+        Locations.data.unshift(item);
+      }
+      store();
+    }
+  };
+
+  try {
+    var items = angular.fromJson(localStorage.getItem('locations')) || [];
+    Locations.data = items;
+  } catch (e) {
+    Locations.data = [];
+  }
+
+  return Locations;
+});
+```
+
+Unlike examples that we've covered in the past, this code assumes that have full access to LocalStorage as it is 
+naturally a part of the browser and fully accessible via built-in JavaScript APIs.
+
+## Web SQL, IndexedDB, SQLite
+
+These are each client-side (browser) databases.  As relational/SQL databases, they support the use of standard SQL statements.
+
+### Web SQL
+
+This is a deprecated technology that is still supported by iOS and Android.  Avoid.
+
+### IndexedDB
+
+A key-value store, similar to LocalStorage. However, items have fields with specific types and you are able to filter by keys. Not supported by either Android of iOS. Avoid.
+
+### SQLite
+
+Although very common in native iOS and Android, this is NOT supported universally in browsers.  Cordova plugins exist to help.
+
+## Limitations and Future Directions
+
+The advantage of things like SQLite and LocalStorage is that this data can't be viewed by other apps or the user directly.
+
+Web SQL is actually supported natively in iOS and Android.  This is accessible via Cordova plugin.  Wilken speculates that support will shift in favor of IndexedDB.
+
+In either case, it will be necessary to rely on Cordova plugins to ensure consistent behavior.
+
+### Cordova Storage Documentation
+
+In the end, it will be necessary to consult the [Cordova Storage Documentation](http://cordova.apache.org/docs/en/dev/cordova/storage/storage.html#Storage) for authoritative answers here.
+
+The book does discuss ways that we can check to see how the approaches to ionic storage are supported:
+
+```javascript
+alert('WebSQL: ' + ((window.openDatabase) ? 'yes' : 'no'));
+alert('IndexedDB: ' + ((window.indexedDB ? 'yes' : 'no'));
+```
+
+# Multi Platform
+
+While Ionic is cross-platform, there are two main differences between the two platforms Ionic supports;
+
+* appearance
+* behavior
+
+The last section of chapter 7 discusses these options extensively.
