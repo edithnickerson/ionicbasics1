@@ -286,3 +286,69 @@ The example supposes that we have a card we want to swipe in our UI.
 
 ![Detecting a swipe gesture](http://i39.photobucket.com/albums/e188/ahuimanu/Figure7-2_zpscev7o5ys.png "swipe gesture")
 
+As you can see in the code example, you have finer control over the gesture events with the `$ionicGesture` service.  The code example makes a custom directive to handle the event detection.
+
+This code makes use of a custom directive's `$element` service, which refers to the element defined by the custom directive itself.
+
+```javascript
+.directive('card', function () {
+  return {
+    scope: true,
+    controller: function ($scope, $element, $ionicGesture, $interval) {
+      $scope.left = 0;
+
+      $ionicGesture.on('drag', function (event) {
+        $scope.left = event.gesture.deltaX;
+        $scope.$digest();
+      }, $element);
+
+      $ionicGesture.on('dragend', function (event) {
+        if (Math.abs($scope.left) > (window.innerWidth / 3)) {
+          $scope.left = ($scope.left < 0) ? -window.innerWidth : window.innerWidth;
+          $element.remove();
+        } else {
+          var interval = $interval(function () {
+            if ($scope.left < 5 && $scope.left > -5) {
+              $scope.left = 0;
+              $interval.cancel(interval);
+            } else {
+              $scope.left = ($scope.left < 0) ? $scope.left + 5 : $scope.left - 5;
+            }
+          }, 5);
+        }
+        $scope.$digest();
+      }, $element);
+    },
+    transclude: true,
+    template: '<div class="list card" ng-style="{left: left + \'px\'}"><div class="item" ng-transclude>Swipe Me</div></div>'
+  }
+})
+```
+
+Look at Table 7.1 in the Wilken book to see each of the Gestures and javascript events available.
+
+#Storage for Persistence
+
+We'll need to store the dat in our apps somehow.  While we have previously played with localStorage in the past,
+this section of Chapter 7 discusses the matter further.
+
+Options:
+
+1. LocalStorage
+2. IndexedDB
+3. SQLite / Web SQL
+4. Using a REST service
+
+## LocalStorage
+
+We've alread used local storage.  Some limitations:
+
+* All data is stored as a string
+* Size limitations: [http://www.html5rocks.com/en/tutorials/offline/quota-research/](http://www.html5rocks.com/en/tutorials/offline/quota-research/)
+ 
+
+### Weather App Revisited
+
+If we think about the favorites from the weather app in Chapter 6, we can imagine that the favorite cities may have been persisted so that we have them from execution to execution of the app:
+
+![LocalStorage to hold weather favorites](http://i39.photobucket.com/albums/e188/ahuimanu/Figure7-3_zpsafdagvnq.png "local storage")
