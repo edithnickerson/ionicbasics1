@@ -1,0 +1,3 @@
+# ignore ionic.project files
+# useful as they may contain API keys
+ionic.project
