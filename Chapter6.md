@@ -7,6 +7,10 @@ Covering:
 * Modals
 * Scrolling
 
+## Reminder on git
+
+Here is a good tutorial/guide on git: [Git tutorial](https://www.atlassian.com/git/tutorials/what-is-version-control "git tutorial")
+
 ## Weather App
 
 So, we're building this:
