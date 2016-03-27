@@ -556,3 +556,91 @@ We can create a modal dialog also with `ionModal`.  These are temporary dialogs 
 Modals are useful to show something contextual without leaving the underlying view.
 
 ![ionModal](http://i39.photobucket.com/albums/e188/ahuimanu/Figure6-9_zpsmj5bzccz.png "ionModal")
+
+On smaller devices, modals usualy cover the entire screen. On larger devices, it might be centered.
+
+You can use CSS to control this as the modal will vary in size depending on the device.
+
+### Modal setup
+
+We'll set up the modal after injecting it w ith the `$ionicModal` service.  As with the popover, we'll have to clean up the modal as it is not part of a template/view/state.
+
+#### Updating the Weather View Controller
+
+We include three methods in the controller to help work with the modal dialog:
+
+```javascript
+  $scope.showModal = function () {
+    if ($scope.modal) {
+      $scope.modal.show();
+    } else {
+      $ionicModal.fromTemplateUrl('views/weather/modal-chart.html', {
+        scope: $scope
+      }).then(function (modal) {
+        $scope.modal = modal;
+        var days = [];
+        var day = Date.now();
+        for (var i = 0; i < 365; i++) {
+          day += 1000 * 60 * 60 * 24;
+          days.push(SunCalc.getTimes(day, $scope.params.lat, $scope.params.lng));
+        }
+        $scope.chart = days;
+        $scope.modal.show();
+      });
+    }
+  };
+  $scope.hideModal = function () {
+    $scope.modal.hide();
+  };
+  $scope.$on('$destroy', function() {
+    $scope.modal.remove();
+  });
+```
+
+#### Modal dialog template
+
+We also create a template for the modal.  Another important aspect of using modals is to keep in mind that a modal dialog creates a child scope for you to use.
+
+This means that if we want a modal to be attached to the view that we used to call it, you should tell the modal that the scope for that view is its parent scope.
+
+In keeping with the asynchronous programming inherent in web and mobile programming, template loading for the modal utilizes a promise, which uses a `then()` method to be called when the template has been loaded.
+
+We also need to listen for the `$destroy` event on the scope in order to clean up the resources that the modal requires.
+
+NOTE: As with the popovers from chapter 5, we must take steps to reclaim the resources allocated for both modals and popovers.  This is partially because we use controller code to create these rather than the templating system.
+
+#### Modal template for the sunrise and sunset charts
+
+Our `ionicModal` uses an HTML template to compose the modal dialog's visual elements.
+
+We use the `ionModalView` directive to accomplish this.
+
+```html
+<ion-modal-view>
+  <ion-header-bar class="bar-dark">
+    <h1 class="title">Sunrise, Sunset Chart</h1>
+    <button class="button button-clear" ng-click="hideModal()">Close</button>
+  </ion-header-bar>
+  <ion-content>
+    <div class="list">
+      <div class="item" collection-repeat="day in chart">
+        {{day.sunrise | date:'MMM d'}}: {{day.sunrise | date:'shortTime'}}, {{day.sunset | date:'shortTime'}}
+      </div>
+    </div>
+  </ion-content>
+</ion-modal-view>
+```
+
+### Showing the sunrise/sunset data
+
+The book makes a good point that, if we were to show sunrise and sunset data, we'd have to potentially show the entire year if we didn't try to filter the data somehow.
+
+Instead, we use the __Collection Repeat__ feature which works on a collection of items to show only a portion of those items.  This is good for scrolling through large data sets.
+
+Considerations:
+
+* You can only work with arrays of items
+* You must define the exact height and width of the items
+* The collection repeat takes up the entirety of its container
+
+[Understanding Collection Repeat](http://i39.photobucket.com/albums/e188/ahuimanu/Figure6-10_zpsuwib4p60.png "Collection Repeat")
