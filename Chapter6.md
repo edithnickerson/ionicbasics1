@@ -635,7 +635,7 @@ We use the `ionModalView` directive to accomplish this.
 
 The book makes a good point that, if we were to show sunrise and sunset data, we'd have to potentially show the entire year if we didn't try to filter the data somehow.
 
-Instead, we use the _*Collection Repeat*_ feature which works on a collection of items to show only a portion of those items.  This is good for scrolling through large data sets.
+Instead, we use the __*Collection Repeat*__ feature which works on a collection of items to show only a portion of those items.  This is good for scrolling through large data sets.
 
 Considerations:
 
