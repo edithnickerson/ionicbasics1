@@ -643,4 +643,5 @@ Considerations:
 * You must define the exact height and width of the items
 * The collection repeat takes up the entirety of its container
 
-[Understanding Collection Repeat](http://i39.photobucket.com/albums/e188/ahuimanu/Figure6-10_zpsuwib4p60.png "Collection Repeat")
+![Understanding Collection Repeat](http://i39.photobucket.com/albums/e188/ahuimanu/Figure6-10_zpsuwib4p60.png "Collection Repeat")
+
