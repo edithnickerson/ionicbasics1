@@ -1,6 +1,7 @@
 # Chapter Challenges
 
-1. Reload the forecast - `ionRefresh`
+1. Reload the forecast - `ionRefresher`
+    2. Completed - `ionRefresher` used [http://ionicframework.com/docs/api/directive/ionRefresher/](http://ionicframework.com/docs/api/directive/ionRefresher/)
 2. Implement the loading component - Like a previous chapter
 3. Allow reordering of locations - `ionList` reordering
 4. Use tabs instead of scrolling - Avoid making each tab a new state
