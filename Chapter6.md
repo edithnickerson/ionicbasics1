@@ -78,6 +78,12 @@ We'll create services to:
 1. Keep favorite locations
 2. Keep settings
 
+Recall that we use an Angular service in order to:
+
+1. Share data and functions between controllers
+2. Any changes made in the service data are immediately available across all services
+3. Access external capabilities
+
 #### The Settings service
 
 ```javascript
@@ -128,3 +134,99 @@ We'll create services to:
     }
   };
 ```
+
+The Locations service is injected straight into the side menu using a new controller created in the app.js file:
+
+```javascript
+.controller('LeftMenuController', function ($scope, Locations) {
+  $scope.locations = Locations.data;
+})
+```
+
+This is then added to the `<ion-side-menu>`
+
+We haven't seent his yet in Ionic as we've handled all controllers and views as states.  However, the sidemenu isn't a state, so we add the controller directly to it.
+
+We use an `ng-repeat` to show the favorites in the side menu in the `index.html` main template:
+
+```html
+<ion-list>
+    <ion-item class="item-icon-left" ui-sref="search" menu-close><span class="icon ion-search"></span> Find a City</ion-item>
+    <ion-item class="item-icon-left" ui-sref="settings" menu-close><span class="icon ion-ios-cog"></span> Settings</ion-item>
+    <ion-item class="item-divider">Favorites</ion-item>
+    <ion-item class="item-icon-left" ui-sref="weather({city: location.city, lat: location.lat, lng: location.lng})" menu-close ng-repeat="location in locations"><span class="icon ion-ios-location"></span> {{location.city}}</ion-item>
+</ion-list>
+```
+
+### Settings Template
+
+The settings template provides:
+
+1. A radio list to select temperature units `ionRadio`
+2. A range to configure the number of days to show in the forecast - HTML5 range
+3. A list to manage favorite locations - `ionList`
+
+![Settings View](http://i39.photobucket.com/albums/e188/ahuimanu/Figure6-4_zpsz2zwecaa.png "settings")
+
+```html
+<ion-view view-title="Settings">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-divider">Units</ion-item>
+      <ion-radio ng-model="settings.units" ng-value="'us'">Imperial (Fahrenheit)</ion-radio>
+      <ion-radio ng-model="settings.units" ng-value="'si'">Metric (Celsius)</ion-radio>
+      <div class="item item-divider">Days in forecast <span class="badge badge-dark">{{settings.days - 1}}</span></div>
+      <div class="item range range-positive">
+        2 <input type="range" name="days" ng-model="settings.days" min="2" max="8" value="8"> 8
+      </div>
+      <div class="item item-button-right">Favorites <button class="button button-small" ng-click="canDelete = !canDelete">{{canDelete ? 'Done' : 'Edit'}}</button></div>
+    </ion-list>
+    <ion-list show-delete="canDelete">
+      <ion-item ng-repeat="location in locations">
+        <ion-delete-button class="ion-minus-circled" ng-click="remove($index)"></ion-delete-button>
+        {{location.city}}
+      </ion-item>
+    </ion-list>
+    <p class="padding">Weather data powered by <a href="https://developer.forecast.io/docs/v2">Forecast.io</a> and geocoding powered by <a href="https://developers.google.com/maps/documentation/geocoding/">Google</a>.</p>
+  </ion-content>
+</ion-view>
+```
+
+#### Settings controller
+
+```javascript
+angular.module('App')
+.controller('SettingsController', function ($scope, Settings, Locations) {
+
+    //setting default values
+    $scope.settings = Settings;
+    $scope.locations = Locations.data;
+    $scope.canDelete = false;
+    
+    //accommodates removing a favorite
+    $scope.remove = function (index) {
+        Locations.toggle(Locations.data[index]);
+    };
+});
+
+```
+
+#### Settings state
+
+in app.js:
+
+```javascript
+.state('settings', {
+    url: '/settings',
+    controller: 'SettingsController',
+    templateUrl: 'views/settings/settings.html'
+})
+```
+
+## The Weather View
+
+Shows the current weather and forecast for a location.
+
+`git checkout -f step5`
+
+![Weather View](http://i39.photobucket.com/albums/e188/ahuimanu/Figure6-5_zpssabhxlc2.png "weather view")
