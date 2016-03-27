@@ -40,7 +40,7 @@ angular.module('App')
         $ionicLoading.show();        
         
         //is weather more than 15 minutes old?      
-        if(Date.now() > age * 1000 * 60 * 15 || first){
+        if(Date.now() > age + 1000 * 60 * 15 || first){
           
           //it is no longer the first time
           first = false;

@@ -22,7 +22,7 @@ Here are some notes to keep in mind about running ionic apps from now on.  Gener
 Cloud 9 has been a great IDE and runtime environment so far.  We can do almost 
 everything on Cloud9 short of actually deploying to your device.
 
-##Install Ionic for every project
+## Install Ionic for every project
 
 For every C9 ionic project you'll need to install `ionic` and `cordova`:
 
@@ -81,14 +81,32 @@ Chrome Developer Tools Device Mode:
 
 ![Chrome Developer Tools Device Mode](http://i39.photobucket.com/albums/e188/ahuimanu/Chrome-Developer-Tools-Device-Mode_zpsletlgav7.png "Chrome Developer Tools Device Mode")
 
-## Runnig Wilken's Code
+## Running Wilken's Code
 
 All of the [book's](https://www.manning.com/books/ionic-in-action "Ionic in Action") code is at: [https://github.com/ionic-in-action](https://github.com/ionic-in-action "ionic in action")
 
 You'll notice throughout the chapters that Wilken uses `git` commands so that you can
 `clone` and `checkout` phases or steps of each chapter as you read along.  I __HIGHLY__ recommend you follow along in the book in this manner.
 
-##Ionic Platform and Ionic Lab
+## git clone, checkout, and branch
+
+At the beginning of every chapter, Wilken really gives you two options:
+
+1. start a new ionic app and follow along by typing the code from the book into your own project
+   a. `ionic start <project_name>`
+2. clone and checkout his project incrementally as he progresses through a chapter
+   b. `git clone <git_url>`
+   c. `git checkout -f <stepn>` where stepn is the increment from the chapter
+
+At the end of each chapter, the last checkout from Wilken will give you hsi completed project.
+
+Now, run this command to get your copy:
+
+`git checkout -b <mybranch> <stepn>` again, `<stepn>` is Wilken's branch. You are not specifying the -f switch in this case as you don't want to remove your work.
+
+A good tutorial on all things `git` is here: [Git tutorial](https://www.atlassian.com/git/tutorials/what-is-version-control "Git tutorial")
+
+## Ionic Platform and Ionic Lab
 
 Ionic also offers free app hosting using their `ionic platform` service.
 
