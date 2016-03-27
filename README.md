@@ -104,6 +104,8 @@ Now, run this command to get your copy:
 
 `git checkout -b <mybranch> <stepn>` again, `<stepn>` is Wilken's branch. You are not specifying the -f switch in this case as you don't want to remove your work.
 
+If you don't want to move the HEAD around, then you can just type: `git checkout -b <mybranch>`
+
 A good tutorial on all things `git` is here: [Git tutorial](https://www.atlassian.com/git/tutorials/what-is-version-control "Git tutorial")
 
 ## Ionic Platform and Ionic Lab
