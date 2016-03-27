@@ -230,3 +230,96 @@ Shows the current weather and forecast for a location.
 `git checkout -f step5`
 
 ![Weather View](http://i39.photobucket.com/albums/e188/ahuimanu/Figure6-5_zpssabhxlc2.png "weather view")
+
+## Forecast IO
+
+As we did with weather underground, we'll need to get a forecast.io API key in order to continue with this example.
+
+We can do so by visiting [https://develoeper.forecast.io](https://develoeper.forecast.io).
+
+As with all of these services, there is a free tier beyond which you have to pay for use.
+
+## CORS
+
+Cross-origin resource sharing is mentioned in the book and can be further examined here [CORS](http://enable-cors.org).
+
+Some services we'll consume won't support CORS and your attempt to make an API call from a RESTful service from a site that doesn't support CORS will fail.
+
+When developing, the Ionic CLI provides a means to create a proxy to consume the non-CORS REST API and allow you to use it.  When your app is deployed on a device, however, you'll need to either 
+provide your own proxy, or use JSONP.
+
+### ionic.project proxy
+
+You set the Ionic CLI proxy this way (in the ionic.project file):
+
+```javascript
+{
+  "name": "chapter6",
+  "app_id": "",
+  "proxies": [
+    {
+      "path": "/api/forecast",
+      "proxyUrl": "https://api.forecast.io/forecast/<your-forecast.io-key-here>/"
+    }
+  ]
+}
+```
+
+The proxy setting is set in the ionic.project file that accompanies your project.
+
+This proxy will be in effect when we run:
+
+* `ionic serve`
+* `ionic emulate`
+* `ionic run`
+
+### Weather View Template
+
+The template is currently rather simple
+
+```html
+<ion-view view-title="{{params.city}}">
+  <ion-content>
+    <h3>Current Conditions</h3>
+    <p>{{forecast.currently.temperature | number:0}}&deg;</p>
+  </ion-content>
+</ion-view>
+```
+
+### Weather View Controller
+
+The controller is fairly simple as well and uses the built-in `$stateParams` service to obtain lat and lon.
+
+```javascript
+angular.module('App')
+.controller('WeatherController', function ($scope, $http, $stateParams, Settings) {
+    $scope.params = $stateParams;
+    $scope.settings = Settings;
+
+    $http.get('/api/forecast/' + $stateParams.lat + ',' + $stateParams.lng, {params: {units: Settings.units}}).success(function (forecast) {
+        $scope.forecast = forecast;
+    });
+});
+```
+
+### Add the state
+
+We then add the state:
+
+```javascript
+.state('weather', {
+  url: '/weather/:city/:lat/:lng',
+  controller: 'WeatherController',
+  templateUrl: 'views/weather/weather.html'
+})
+```
+
+## ionScroll
+
+We further explore `ionScroll` and other additions to improve the appearance of the app.
+
+`git checkout -f step6`
+
+### The Weather View
+
+![The ionScroll Weather View](http://i39.photobucket.com/albums/e188/ahuimanu/Figure6-6_zpsuxdoyohp.png "weather view")
