@@ -323,3 +323,236 @@ We further explore `ionScroll` and other additions to improve the appearance of 
 ### The Weather View
 
 ![The ionScroll Weather View](http://i39.photobucket.com/albums/e188/ahuimanu/Figure6-6_zpsuxdoyohp.png "weather view")
+
+#### IonScroll
+
+`ionScroll` provides more scrolling capabilities than `ionContent`.
+
+However, `ionScroll` requires that you tell it how large the viewing area will be (based on the size of the screen).
+
+We'll do this as `ionScroll` will help us scroll by the page.
+
+![Ion Scroll Paging](http://i39.photobucket.com/albums/e188/ahuimanu/Figure6-7_zpsehwsh0mt.png "ionScroll Paging")
+
+`ionScroll` will work by creating a page that includes a current page, and the next and previous pages.
+
+#### Weather View Template
+
+The template reveals how the calculations that `ionScroll` requires are performed:
+
+```html
+<ion-view view-title="{{params.city}}">
+  <ion-content>
+    <ion-scroll direction="y" paging="true" ng-style="{width: getWidth(), height: getHeight()}">
+      <div ng-style="{height: getTotalHeight()}">
+        <div class="scroll-page center" ng-style="{width: getWidth(), height: getHeight()}">
+```
+
+The rest of the template uses Ionic's styling extensively, including a grid system which is common in CSS frameworks, such as bootstrap.
+
+#### Weather View Controller
+
+Note how we are determining view sizes in order to faciliate the use of ionScroll.
+
+```javascript
+angular.module('App')
+.controller('WeatherController', function ($scope, $http, $stateParams, Settings) {
+  $scope.params = $stateParams;
+  $scope.settings = Settings;
+
+  $http.get('/api/forecast/' + $stateParams.lat + ',' + $stateParams.lng, {params: {units: Settings.units}}).success(function (forecast) {
+    $scope.forecast = forecast;
+  });
+
+  var barHeight = document.getElementsByTagName('ion-header-bar')[0].clientHeight;
+  $scope.getWidth = function () {
+    return window.innerWidth + 'px';
+  };
+  $scope.getTotalHeight = function () {
+    return parseInt(parseInt($scope.getHeight()) * 3) + 'px';
+  };
+  $scope.getHeight = function () {
+    return parseInt(window.innerHeight - barHeight) + 'px';
+  };
+});
+
+```
+
+#### CSS
+
+Wilken adds some of his own CSS to make things look snappier:
+
+```css
+.scroll-page .icon:before {
+  padding-right: 5px;
+}
+.scroll-page .row + .row {
+  margin-top: 0;
+  padding-top: 5px;
+}
+.scroll-page .row:nth-of-type(odd) {
+  background: #fafafa;
+}
+.scroll-page .row:nth-of-type(even) {
+  background: #f3f3f3;
+}
+.scroll-page .wind-icon {
+  display: inline-block;
+}
+.scroll-page.center {
+  text-align: center;
+}
+.scroll-page .primary {
+  margin: 0;
+  font-size: 100px;
+  font-weight: lighter;
+  padding-left: 30px;
+}
+.scroll-page .secondary {
+  margin: 0;
+  font-size: 150px;
+  font-weight: lighter;
+}
+.scroll-page .has-header {
+  position: relative;
+}
+
+```
+
+## Custom Filters for the Forecast Data
+
+Ionic provides the ability to use filters to modify and control how data is presented in a view.
+
+Also, since we're dealing with time, we'll use the [MomentJS](http://momentjs.com/) timezone library.
+
+`ionic add moment-timezone`
+
+As these chapter notes assume you are using the `git checkout` method of following the book, Wilken has already installed momentjs.
+
+Remember, filters are for changing how data is viewed without transforming the original data.
+
+### Filter for handling timezones
+
+Uses MomentJS and your browser to detect local time versus UTC.
+
+```javascript
+.filter('timezone', function () {
+  return function (input, timezone) {
+    if (input && timezone) {
+      var time = moment.tz(input * 1000, timezone);
+      return time.format('LT');
+    }
+    return '';
+  };
+})
+```
+
+### Filter for showing the chance of percipitation
+
+Rounds the change of percipitation value to be to the multiple of 10.
+
+```javascript
+.filter('chance', function () {
+  return function (chance) {
+    if (chance) {
+      var value = Math.round(chance * 10);
+      return value * 10;
+    }
+    return 0;
+  };
+})
+```
+
+### Filter for showing ionicons to correspond to weather
+
+Uses Ionicon styles for weather conditions.
+
+```javascript
+.filter('icons', function () {
+    var map = {
+        'clear-day': 'ion-ios-sunny',
+        'clear-night': 'ion-ios-moon',
+        rain: 'ion-ios-rainy',
+        snow: 'ion-ios-snowy',
+        sleet: 'ion-ios-rainy',
+        wind: 'ion-ios-flag',
+        fog: 'ion-ios-cloud',
+        cloudy: 'ion-ios-cloudy',
+        'partly-cloudy-day': 'ion-ios-partlysunny',
+        'partly-cloudy-night': 'ion-ios-cloudy-night'
+    };
+    return function (icon) {
+        return map[icon] || '';
+    }
+})
+```
+
+## Action Sheets
+
+These are used to show a list of options to a user.
+
+`git checkout -f step7`
+
+An action sheet acts as a model dialog which we slide into the view. As a modal dialog, it is temporary and must be cancelled/dismissed to get the dialog to go away.
+
+Platform specificity: iOS has a feature like this, but Android lacks it.
+
+![Action Sheet](http://i39.photobucket.com/albums/e188/ahuimanu/Figure6-8_zpsmpn8gnho.png "Action Sheet")
+
+### Action Sheet Services
+
+We'll not use a template for the Action Sheet as it will run entirely from the built-in `$ionicActionSheet` service.
+
+Rather, we create a list of buttons and a specification for what should happen when each of those buttons is selected.
+
+#### Adding the action sheet button
+
+We use a common `ion-more` icon to trigger the action sheet.
+
+```html
+<ion-nav-buttons side="right">
+    <button class="button button-icon" ng-click="showOptions()"><span class="icon ion-more"></span></button>
+</ion-nav-buttons>
+```
+#### Adding the $ionicActionSheet to the Weather View Controller
+
+We inject the $ionicActionSheet into the controller and us it.
+
+The `showOptions` method is called by the more button in the UI.
+
+Also notice that we use an `if...else` to detect which of the buttons was clicked.
+
+```javascript
+$scope.showOptions = function () {
+var sheet = $ionicActionSheet.show({
+  buttons: [
+    {text: 'Toggle Favorite'},
+    {text: 'Set as Primary'},
+    {text: 'Sunrise Sunset Chart'}
+  ],
+  cancelText: 'Cancel',
+  buttonClicked: function (index) {
+    if (index === 0) {
+      Locations.toggle($stateParams);
+    }
+    if (index === 1) {
+      Locations.primary($stateParams);
+    }
+    if (index === 2) {
+      $scope.showModal();
+    }
+    return true;
+  }
+});
+};
+```
+
+## ionModal for sunrise and sunset
+
+We can create a modal dialog also with `ionModal`.  These are temporary dialogs which take control of the UI until you dismiss them.  We sometimes call modal dialogs "pop ups."
+
+`git checkout -f step8`
+
+Modals are useful to show something contextual without leaving the underlying view.
+
+![ionModal](http://i39.photobucket.com/albums/e188/ahuimanu/Figure6-9_zpsmj5bzccz.png "ionModal")
