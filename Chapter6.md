@@ -642,6 +642,109 @@ Considerations:
 * You can only work with arrays of items
 * You must define the exact height and width of the items
 * The collection repeat takes up the entirety of its container
+* We won't use normal Angular model binding
+* Styles should take care not to change items in the list
+* Avoid using images
 
 ![Understanding Collection Repeat](http://i39.photobucket.com/albums/e188/ahuimanu/Figure6-10_zpsuwib4p60.png "Collection Repeat")
 
+Wilken's example uses the SunCalc library:
+
+`ionic add suncalc`
+
+Ensure that it is added along with the rest of the libraries in `index.html`:
+
+```html
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/moment/moment.js"></script>
+    <script src="lib/moment-timezone/builds/moment-timezone-with-data.js"></script>
+    <script src="lib/suncalc/suncalc.js"></script>
+```
+
+#### Updating the Weather View Controller to use SunCalc
+
+```javascript
+  $scope.showModal = function () {
+    if ($scope.modal) {
+      $scope.modal.show();
+    } else {
+      $ionicModal.fromTemplateUrl('views/weather/modal-chart.html', {
+        scope: $scope
+      }).then(function (modal) {
+        $scope.modal = modal;
+        var days = [];
+        var day = Date.now();
+        for (var i = 0; i < 365; i++) {
+          day += 1000 * 60 * 60 * 24;
+          days.push(SunCalc.getTimes(day, $scope.params.lat, $scope.params.lng));
+        }
+        $scope.chart = days;
+        $scope.modal.show();
+      });
+    }
+  };
+```
+
+#### Updating the Weather Vew Modal Chart Template to use Collection Repeat
+
+Notice the use of the `collection-repeat` directive as an element attribute:
+
+```html
+<ion-modal-view>
+  <ion-header-bar class="bar-dark">
+    <h1 class="title">Sunrise, Sunset Chart</h1>
+    <button class="button button-clear" ng-click="hideModal()">Close</button>
+  </ion-header-bar>
+  <ion-content>
+    <div class="list">
+      <div class="item" collection-repeat="day in chart">
+        {{day.sunrise | date:'MMM d'}}: {{day.sunrise | date:'shortTime'}}, {{day.sunset | date:'shortTime'}}
+      </div>
+    </div>
+  </ion-content>
+</ion-modal-view>
+```
+
+__*Collection repeat*__ works much the same as `ngRepeat` does.
+
+## Pop up to confirm favorite changes
+
+We'll implement a confirmatory popup when changes to the favorites list are detected.
+
+`git checkout -f step9`
+
+Ionic defines three typs of popups:
+
+1. **Alert** - Converys information
+2. **Confirm** - Seeks verification and returns a value representing that verification
+3. **Prompt** - Obtains data and confirms data entry
+
+Alternatively, we can design our own popup.
+
+![Popups](http://i39.photobucket.com/albums/e188/ahuimanu/Figure6-11_zps3uxnab3r.png "Popups")
+
+### Implementing the Popups
+
+We'll implement the popup directly in the Locations service in the `toggle` method.
+
+```javascript
+    toggle: function (item) {
+      var index = Locations.getIndex(item);
+      if (index >= 0) {
+        $ionicPopup.confirm({
+          title: 'Are you sure?',
+          template: 'This will remove ' + Locations.data[index].city
+        }).then(function (res) {
+          if (res) {
+            Locations.data.splice(index, 1);
+          }
+        });
+      } else {
+        Locations.data.push(item);
+        $ionicPopup.alert({
+          title: 'Location saved'
+        });
+      }
+    }
+```
