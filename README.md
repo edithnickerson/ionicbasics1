@@ -94,12 +94,12 @@ At the beginning of every chapter, Wilken really gives you two options:
 
 1. start a new ionic app and follow along by typing the code from the book into your own project
    
-    a. `ionic start <project_name>`
+`ionic start <project_name>`
 
 2. clone and checkout his project incrementally as he progresses through a chapter
    
-    b. `git clone <git_url>`
-   c. `git checkout -f <stepn>` where stepn is the increment from the chapter
+`git clone <git_url>`
+`git checkout -f <stepn>` where stepn is the increment from the chapter
 
 At the end of each chapter, the last checkout from Wilken will give you hsi completed project.
 
